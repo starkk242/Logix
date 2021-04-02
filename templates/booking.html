@@ -1,0 +1,16 @@
+<label for="slot">slot</label><br>
+
+<form action="/book_slot" method="post">
+
+	<label for="doc_name"> For Doctor : </label>
+		<input type="text" placeholder="{{doc_name}}" name="doc_name" id="doc_name" value="{{doc_name}}" readonly><br>
+
+	<select name="selected_slot" id="selected_slot">
+	{%for i in range(0, len)%}
+	  <option value={{available_slot[i]}}>{{available_slot[i]}}</option>
+	{%endfor%}
+	</select><br>
+	
+	<input type="submit" name="form" value="Submit">
+	
+</form>

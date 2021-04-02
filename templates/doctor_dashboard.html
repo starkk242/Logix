@@ -1,0 +1,16 @@
+<b>Welcome Dr. {{ fname }} {{ lname }}</b>
+
+<label for="slot">Choose Slots:</label><br>
+
+<form action="/slot" method="post">
+	<input type="text" placeholder="{{fname}}" name="doc_name" id="doc_name" value="{{fname}}" readonly><br>
+	<select name="slot" id="slot">
+	  <option value="0.5">0.5 hr or 30mins</option>
+	  <option value="1">1 hr or 60mins</option>
+	</select><br>
+	<label for="start_time"><b>Start Time</b></label>
+	<input type="text" placeholder="Eg. 10:00" name="start_time" id="start_time" required><br>
+	<label for="end_time"><b>End Time</b></label>
+	<input type="text" placeholder="Eg. 16:30" name="end_time" id="end_time" required><br>
+	<input type="submit" name="form" value="Submit">
+</form>

@@ -1,0 +1,16 @@
+<b>Welcome {{ fname }} {{ lname }}</b><br>
+
+<label for="slot">Choose Doctor:</label><br>
+
+<form action="/doctor_select" method="post">
+	
+	<select name="doc_name" id="doc_name">
+		
+	{%for i in range(0, len)%}
+	  <option value={{doc_list[i]}}>{{doc_list[i]}}</option>
+	{%endfor%}
+	</select><br>
+	
+	<input type="submit" name="form" value="Submit">
+	
+</form>

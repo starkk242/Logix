@@ -1,0 +1,36 @@
+1: Create one Registration form with below fields. [All fields are required]
+First Name,
+Last Name,
+Email, [Unique for each user]
+Password,
+Phone Number, 
+	=> Multiple Phone Numbers. 
+	=> Add more number On click of +
+	=> Each number should be Unique
+Date of Birth,
+Gender
+Role [Doctor, Patient]
+
+
+2: Login & Logout.
+
+3: Doctor Login.
+Create one form to enter Doctor's availablity slot.
+
+Doctor Name
+Slot[Hours] : 0.5, 1, 1.5, 2, 2.5 ...
+Available From : 10, 10:30, ..., 16, 16:30
+Available TO:  10:30, 11, ... 18, 18:30
+
+=> You can use textbox for all.
+Note: When Doctor login first time then form will be empty. Once doctor save the form then next time display information on login and allow Doctor to edit.
+
+4: Patient Login.
+Display One Dropdown with all Doctors Name.
+On Change of Doctor from Dropdown - Display that particular doctor's available slot.
+Allow Patient to book doctor with particular slot.
+
+Select Slot and Save in database.
+
+E.G: 10, 10:30, 11, 11:30
+=> If any slot is booked then it will display as disabled(booked).

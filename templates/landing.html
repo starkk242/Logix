@@ -1,0 +1,72 @@
+<html>
+
+<head>
+	<title>Welcome to this system</title>
+	<SCRIPT language="javascript">
+function add(type) {
+	var element = document.createElement("input");
+
+	element.setAttribute("type", "number");
+	element.setAttribute("placeholder", "Without Country Code");
+	element.setAttribute("id", "phone_number");
+
+
+	var foo = document.getElementByname("phone_number");
+	foo.appendChild(element);
+
+</SCRIPT>
+</head>
+
+<body>
+	<form action="/register" method="post" >
+		<div class="container">
+			<h1>Register</h1>
+			<p>
+				Fill This form for Registration
+			</p>
+			<hr>
+
+			<label for="fname"><b>First Name</b></label>
+			<input type="text" placeholder="Enter Your First" name="fname" id="fname" required><br>
+
+			<label for="lname"><b>Last Name</b></label>
+			<input type="text" placeholder="Enter Your Last Name" name="lname" id="lname" required><br>
+
+			<label for="email"><b>Email-Id</b></label>
+			<input type="text" placeholder="Enter Your Email address" name="email" id="email" required><br>
+
+			<label for="password"><b>Password</b></label>
+			<input type="password" placeholder="Setup a Password" name="password" id="password" required><br>
+
+			<label for="gender"><b>Gender</b></label>
+			<input type="radio" id="male" name="gender" value="male">
+			<label for="male">Male</label><br>
+			<input type="radio" id="female" name="gender" value="female">
+			<label for="female">Female</label><br>
+			<input type="radio" id="other" name="gender" value="other">
+			<label for="other">Other</label><br>
+
+			<label for="role"><b>Who Are you?</b></label>
+			<input type="radio" id="doctor" name="role" value="doctor">
+
+			<label for="male">Doctor</label><br>
+			<input type="radio" id="patient" name="role" value="patient">
+
+			<label for="female">Patient</label><br>
+
+			<label for="dob"><b>Date of Birth in the Format of DDMMYYY</b></label>
+			<input type="text" placeholder="Eg. 22092000" name="dob" id="dob" required><br>
+
+			<label for="phone_number"><b>Phone Number</b></label>
+			<input type="number" name="phone_number" placeholder="Without Country Code" id="phone_number" required>
+			<INPUT type="button" value="Add" onclick="add(document.text)"/><br>
+
+
+			<input type="submit" name="form" value="Submit">
+			<a href="/login">Login</a>
+			<hr>
+		</div>
+	</form>
+</body>
+
+</html>
