@@ -65,7 +65,16 @@ def login_form():
 	if f[0][0]==paswd_hash:
 		first_name,last_name=dashboard(email,role)
 		if role == 1:
-			return render_template("doctor_dashboard.html",fname=first_name,lname=last_name)
+			mycursor.execute('SELECT slots from doctors where first_name=first_name')
+			av_slots=mycursor.fetchall()[0][0]
+			available_slot=list(ast.literal_eval(av_slots).keys())
+			st_tim='00:00'
+			en_tim='00:00'
+			if len(available_slot)!=0:
+				st_tim=available_slot[0]
+				en_tim=available_slot[len(available_slot)-1]
+
+			return render_template("doctor_dashboard.html",fname=first_name,lname=last_name,st_tim=st_tim,en_tim=en_tim)
 		elif role == 2:
 			mycursor.execute('SELECT first_name,email from doctors')
 			f=mycursor.fetchall()
@@ -158,6 +167,7 @@ def slot():
 def update_db(available_slot,doc_name):
 	mydb=connect()
 	mycursor = mydb.cursor()
+
 	mydb=connect()
 	mycursor = mydb.cursor()
 	available_slot= str(available_slot)
