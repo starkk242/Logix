@@ -77,6 +77,8 @@ def login_form():
 
 @app.route('/doctor_select',methods=['POST'])
 def doctor_select():
+	mydb=connect()
+	mycursor = mydb.cursor()
 	doc_name=request.form['doc_name']
 	sql='SELECT slots from doctors where first_name = %s'
 	val=(doc_name,)
@@ -95,6 +97,8 @@ def doctor_select():
 
 @app.route('/book_slot',methods=['POST'])
 def book_slot():
+	mydb=connect()
+	mycursor = mydb.cursor()
 	selected_slot=request.form['selected_slot']
 	doc_name=request.form['doc_name']
 	sql = 'SELECT slots from doctors where first_name = %s'
@@ -113,6 +117,8 @@ def book_slot():
 
 @app.route('/slot',methods=['POST'])
 def slot():
+	mydb=connect()
+	mycursor = mydb.cursor()
 	slot=request.form['slot']
 	start_time=request.form['start_time']
 	end_time=request.form['end_time']
@@ -152,6 +158,8 @@ def slot():
 def update_db(available_slot,doc_name):
 	mydb=connect()
 	mycursor = mydb.cursor()
+	mydb=connect()
+	mycursor = mydb.cursor()
 	available_slot= str(available_slot)
 	print(available_slot)
 	sql="UPDATE doctors set slots=%s where first_name=%s"
@@ -161,6 +169,8 @@ def update_db(available_slot,doc_name):
 
 
 def dashboard(email,role):
+	mydb=connect()
+	mycursor = mydb.cursor()
 	if role==1:
 		sql='SELECT first_name,last_name from doctors where email = %s'
 		val=(email,)
